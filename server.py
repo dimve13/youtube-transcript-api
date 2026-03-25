@@ -4,7 +4,7 @@ from fastapi import FastAPI, HTTPException
   from youtube_transcript_api._errors import CouldNotRetrieveTranscript
 
   app = FastAPI()
-  ytt_api = YouTubeTranscriptApi()  # instance reused across requests
+  ytt_api = YouTubeTranscriptApi()
 
 
   class TranscriptRequest(BaseModel):
@@ -45,8 +45,3 @@ from fastapi import FastAPI, HTTPException
   @app.get("/health")
   def health():
       return {"ok": True}
-
-
-@app.get("/health")
-def health():
-    return {"ok": True}
